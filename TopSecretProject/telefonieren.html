@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teln</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter:wght@300;400;700&display=swap"
+        rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #fefefe;
+      color: #111;
+    }
+
+    h1, h2 {
+      align-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+    }
+  </style>
+</head>
+<body>
+<h1>Teln, das machen wir sehr oft 😝</h1>
+
+<section id="projects" class="content-section">
+  <a href="index.html" class="category-card">Zurück</a>
+  <div class="gallery" id="gallery">
+    <img src="/img/einhorn.jpg" alt="Projekt 5"
+         data-description="Ja steht eh schon da, einfach kein Einhorn sonder Vierhorn">
+    <img src="/img/eule.png" alt="Projekt 6"
+         data-description="Da warst du mal wieder ganz lustig drauf beim telefonieren">
+    <img src="/img/schlaf.jpg" alt="Projekt 14"
+         data-description="So langweilig sind meine Geschichten jetzt auch wieder nicht">
+    <img src="/img/Bart.jpg" alt="Projekt 21" data-description="Kein Kommentar">
+    <img src="/img/sonnenbrille.jpg" alt="Projekt 23" data-description="Sagt man einmal kurz ihr steht eine Brille">
+    <img src="/img/schlafen.jpg" alt="Projekt 27" data-description="Zzzz">
+  </div>
+</section>
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightbox-close">&times;</span>
+  <img src="" alt="Großansicht" id="lightbox-img">
+  <div id="lightbox-caption" class="lightbox-caption"></div>
+</div>
+
+<script src="/js/app.js"></script>
+
+</body>
+</html>
