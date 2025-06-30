@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Videos mit Lightbox</title>
+  <style>
+    .action-card {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      max-width: 900px;
+      margin: 2rem auto;
+    }
+    .action-card video {
+      width: 150px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+    .action-card video:hover {
+      transform: scale(1.1);
+    }
+    .action-card span {
+      flex-basis: 100%;
+      text-align: center;
+      margin-top: 1rem;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #222;
+    }
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .lightbox video {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 1rem;
+      box-shadow: 0 0 30px rgba(0,0,0,0.7);
+      background: black;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 3rem;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      user-select: none;
+      z-index: 11000;
+    }
+  </style>
+</head>
+<body>
+
+<div class="action-card" onclick="openLightbox('videos/video1.mp4')">
+  <video src="/vid/ei.mp4" autoplay muted loop playsinline></video>
+  <video src="/vid/klatschen.mp4" autoplay muted loop playsinline></video>
+  <video src="/vid/klo.mp4" autoplay muted loop playsinline></video>
+  <video src="/vid/klopapier.mp4" autoplay muted loop playsinline></video>
+  <video src="/vid/kochen.mp4" autoplay muted loop playsinline></video>
+  <video src="/vid/laufen.mp4" autoplay muted loop playsinline></video>
+  <video src="/vid/tanzen.mp4" autoplay muted loop playsinline></video>
+  <video src="/vid/wippe.mp4" autoplay muted loop playsinline></video>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightbox-close">&times;</span>
+  <video controls id="lightbox-video"></video>
+</div>
+<a href="index.html" class="category-card">Zurück</a>
+<script>
+  const videos = document.querySelectorAll('.action-card video');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxVideo = document.getElementById('lightbox-video');
+  const lightboxClose = document.getElementById('lightbox-close');
+
+  videos.forEach(video => {
+    video.addEventListener('click', () => {
+      lightbox.style.display = 'flex';
+
+      // Quelle des geklickten Videos übernehmen
+      lightboxVideo.src = video.src;
+
+      // Ton einschalten und Video starten
+      lightboxVideo.muted = false;
+      lightboxVideo.play();
+    });
+  });
+
+  lightboxClose.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+
+    // Video stoppen und Quelle entfernen
+    lightboxVideo.pause();
+    lightboxVideo.src = '';
+  });
+
+  // Auch schließen, wenn außerhalb des Videos geklickt wird
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+      lightboxVideo.pause();
+      lightboxVideo.src = '';
+    }
+  });
+</script>
+
+</body>
+</html>
