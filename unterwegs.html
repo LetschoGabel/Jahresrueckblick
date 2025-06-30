@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <title>Unterwegs</title>
   <link rel="stylesheet" href="/css/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter:wght@300;400;700&display=swap"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -16,35 +14,34 @@
       background: #fefefe;
       color: #111;
     }
-
     h1, h2 {
-      align-content: center;
       font-family: 'Playfair Display', serif;
       font-weight: 400;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-<h1>Ausflüge</h1>
+  <h1>Ausflüge</h1>
 
-<section id="projects" class="content-section">
-  <a href="index.html" class="category-card">Zurück</a>
-  <div class="gallery" id="gallery">
-    <img src="/img/auto.jpg" alt="Projekt 2" data-description="Sitzen im Auto auf den Weg zum Eislaufplatz">
-    <img src="/img/badesee.jpg" alt="Projekt 3" data-description="Gemeinsam am Badesee">
-    <img src="/img/kino.jpg" alt="Projekt 11" data-description="Da waren wir gemeinsam im Kino">
-    <img src="/img/zirkus.jpg" alt="Projekt 19" data-description="Zuckerwatte, mehr gibts dazu nicht zu sagen. Zuckerwatte">
-    <img src="/img/zirkus1.jpg" alt="Projekt 20" data-description="Gemeinsam im Zirkus">
-    <img src="/img/freibad.jpg" alt="Projekt 25" data-description="Ausschau halten nach Daniel.">
+  <section id="projects" class="content-section">
+    <a href="index.html" class="category-card">Zurück</a>
+    <div class="gallery" id="gallery">
+      <img src="/img/auto.jpg" alt="Projekt 2" data-description="Sitzen im Auto auf den Weg zum Eislaufplatz">
+      <img src="/img/badesee.jpg" alt="Projekt 3" data-description="Gemeinsam am Badesee">
+      <img src="/img/kino.jpg" alt="Projekt 11" data-description="Da waren wir gemeinsam im Kino">
+      <img src="/img/zirkus.jpg" alt="Projekt 19" data-description="Zuckerwatte, mehr gibts dazu nicht zu sagen. Zuckerwatte">
+      <img src="/img/zirkus1.jpg" alt="Projekt 20" data-description="Gemeinsam im Zirkus">
+      <img src="/img/freibad.jpg" alt="Projekt 25" data-description="Ausschau halten nach Daniel.">
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img src="" alt="Großansicht" id="lightbox-img">
+    <div id="lightbox-caption" class="lightbox-caption"></div>
   </div>
-</section>
-<div class="lightbox" id="lightbox">
-  <span class="lightbox-close" id="lightbox-close">&times;</span>
-  <img src="" alt="Großansicht" id="lightbox-img">
-  <div id="lightbox-caption" class="lightbox-caption"></div>
-</div>
 
-<script src="/js/app.js"></script>
-
+  <script src="/js/app.js"></script>
 </body>
 </html>
